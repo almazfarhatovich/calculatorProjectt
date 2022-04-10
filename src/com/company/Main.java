@@ -69,20 +69,31 @@ public class Main {
     }
 
     public static int Calculate(int number1, int number2, char operator) {
+
+
         int result = 0;
-        if (operator == '+') {
-            result = number1 + number2;
-        } else if (operator == '-') {
-            result = number1 - number2;
-        } else if (operator == '*') {
-            result = number1 * number2;
-        } else if (operator == '/') {
-            result = number1 / number2;
-        } else {
-            System.out.println("Write the correct operator!!!");
+        try {
+            if (operator == '+') {
+                result = number1 + number2;
+            } else if (operator == '-') {
+                result = number1 - number2;
+            } else if (operator == '*') {
+                result = number1 * number2;
+
+            } else if (operator == '/') {
+                result = number1 / number2;
+
+            } else {
+                System.out.println("Write the correct operator!!!");
+            }
+
+            return result;
+        }catch (ArithmeticException e) {
+            System.err.println("By zero");
         }
-        return result;
+        return 0;
     }
+
 
     public static String ArabicToRoman(int num) {
         StringBuilder sb = new StringBuilder();
@@ -128,5 +139,5 @@ public class Main {
         }
         return sum;
     }
-    
+
 }
